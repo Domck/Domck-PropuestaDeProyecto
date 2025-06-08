@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propuesta de proyecto/title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #198754;
+      --secondary-color: #2c3e50;
+      --accent-color: #f39c12;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f8f9fa;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+    
+    .header-section {
+      background: linear-gradient(135deg, var(--primary-color) 0%, #0d6e3d 100%);
+      color: white;
+      padding: 3rem 0;
+      margin-bottom: 3rem;
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .logo-wrapper {
+      width: 150px;
+      height: 150px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem auto;
+      border: 5px solid white;
+    }
+    
+    .logo-wrapper img {
+      max-height: 110px;
+      border-radius: 50%;
+    }
+    
+    h1, h2, h3, h4 {
+      font-weight: 700;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .lead {
+      font-size: 1.25rem;
+      opacity: 0.9;
+    }
+    
+    .section-title {
+      position: relative;
+      padding-bottom: 0.75rem;
+      margin-top: 3.5rem;
+      margin-bottom: 2rem;
+      color: var(--secondary-color);
+    }
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--primary-color);
+      border-radius: 2px;
+    }
+    
+    .icon-title i {
+      color: var(--primary-color);
+      margin-right: 0.75rem;
+    }
+    
+    .list-group-item {
+      border-left: 3px solid var(--primary-color);
+      margin-bottom: 0.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .list-group-item:hover {
+      transform: translateX(5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .table {
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .table thead th {
+      background-color: var(--secondary-color);
+      color: white;
+      font-weight: 600;
+    }
+    
+    .table tbody tr:nth-child(even) {
+      background-color: rgba(25, 135, 84, 0.05);
+    }
+    
+    .highlight-box {
+      background: white;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+      border-left: 4px solid var(--primary-color);
+    }
+    
+    .feature-icon {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      margin-right: 1rem;
+    }
+    
+    .cta-section {
+      background: linear-gradient(135deg, var(--secondary-color) 0%, #1a252f 100%);
+      color: white;
+      padding: 3rem;
+      border-radius: 15px;
+      margin-top: 4rem;
+      text-align: center;
+    }
+    
+    .cta-section h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .badge-custom {
+      background-color: var(--accent-color);
+      color: white;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+    }
+    
+    .timeline {
+      position: relative;
+      padding-left: 3rem;
+    }
+    
+    .timeline:before {
+      content: '';
+      position: absolute;
+      left: 1.5rem;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--primary-color);
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+    
+    .timeline-item:before {
+      content: '';
+      position: absolute;
+      left: -3rem;
+      top: 0.25rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      background: var(--primary-color);
+      border: 4px solid white;
+      box-shadow: 0 0 0 2px var(--primary-color);
+    }
+    
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding: 2rem 0;
+      color: var(--secondary-color);
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+      .header-section {
+        padding: 2rem 0;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .lead {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header class="header-section text-center mb-5">
+    <div class="container">
+      <div class="logo-wrapper">
+        <img src="logo.png" alt="Logo de la empresa" class="img-fluid">
+      </div>
+      <h1 class="fw-bold text-white">Propuesta: Solución de Ventas Conversacionales</h1>
+      <p class="lead text-white mb-0">Desarrollo de Página Web para Ventas</p>
+      <span class="badge badge-custom mt-3">Propuesta Comercial</span>
+    </div>
+  </header>
+
+  <div class="highlight-box">
+    <div class="row">
+      <div class="col-md-4 text-md-end">
+        <p class="mb-0"><strong>Presentado por:</strong></p>
+        <p class="mb-0">Jherson Herrera Jaramillo</p>
+        <p class="mb-0"><b>Ingeniero de Sistemas</b></p>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <h2 class="section-title"><i class="fas fa-bullseye me-2"></i>Objetivo</h2>
+    <p>Desarrollar una plataforma web funcional, escalable y adaptable que permita a su empresa mostrar y vender productos, facilitando la comunicación inmediata con sus clientes a través de WhatsApp. La solución incluirá herramientas sencillas de autogestión para mantener actualizado su catálogo de productos sin depender de terceros.</p>
+  </section>
+
+  <section>
+    <h2 class="section-title"><i class="fas fa-cogs me-2"></i>Funcionalidades Clave</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card mb-4 border-0 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><i class="fas fa-shopping-cart feature-icon"></i> Carrito de compras</h5>
+            <p class="card-text">Permite que sus clientes seleccionen productos y envíen su pedido directamente a WhatsApp con todos los detalles.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card mb-4 border-0 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><i class="fas fa-boxes feature-icon"></i> Gestión de Productos</h5>
+            <p class="card-text">Panel administrativo para agregar, editar o eliminar productos, manteniendo su catálogo siempre actualizado.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card mb-4 border-0 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><i class="fas fa-tags feature-icon"></i> Categorías</h5>
+            <p class="card-text">Organización visual por categorías para que los clientes encuentren fácilmente lo que buscan.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card mb-4 border-0 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><i class="fas fa-search feature-icon"></i> Buscador </h5>
+            <p class="card-text">Búsqueda rápida de productos por palabras clave, mejorando la experiencia del usuario.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card mb-4 border-0 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><i class="fas fa-comment-dots feature-icon"></i> Popup de Cotización</h5>
+            <p class="card-text">Un cuadro emergente amable que invita a los visitantes a solicitar una cotización a través de WhatsApp, incrementando la interacción y la captación de leads.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card mb-4 border-0 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><i class="fab fa-whatsapp feature-icon"></i> Botón Flotante WhatsApp</h5>
+            <p class="card-text">Botón permanente que permite a los clientes iniciar una conversación con usted en cualquier momento desde la página, mejorando la atención al cliente y facilitando consultas rápidas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title"><i class="fas fa-desktop me-2"></i>Diseño y Tecnología</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="d-flex align-items-start mb-4">
+          <i class="fas fa-mobile-alt text-primary mt-1 me-3" style="font-size: 1.5rem;"></i>
+          <div>
+            <h5 class="mb-1">Diseño Responsive</h5>
+            <p class="mb-0">Adaptable a todos los dispositivos (PC, tablet y móvil) para llegar a más clientes.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="d-flex align-items-start mb-4">
+          <i class="fas fa-tachometer-alt text-primary mt-1 me-3" style="font-size: 1.5rem;"></i>
+          <div>
+            <h5 class="mb-1">Tecnologías Modernas</h5>
+            <p class="mb-0">Stack tecnológico optimizado para rendimiento y seguridad.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="d-flex align-items-start mb-4">
+          <i class="fas fa-user-friends text-primary mt-1 me-3" style="font-size: 1.5rem;"></i>
+          <div>
+            <h5 class="mb-1">Interfaz Intuitiva</h5>
+            <p class="mb-0">Fácil de usar tanto para clientes como para administradores.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="d-flex align-items-start mb-4">
+          <i class="fas fa-lock text-primary mt-1 me-3" style="font-size: 1.5rem;"></i>
+          <div>
+            <h5 class="mb-1">Seguridad Garantizada</h5>
+            <p class="mb-0">Acceso seguro al panel de control.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title"><i class="fas fa-project-diagram me-2"></i>Fases del Proyecto</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h5 class="fw-bold">1. Relevamiento y Análisis</h5>
+        <p class="text-muted">2 días · Definición detallada de requerimientos</p>
+      </div>
+      <div class="timeline-item">
+        <h5 class="fw-bold">2. Diseño del Prototipo</h5>
+        <p class="text-muted">3 días · Creación de maquetas y flujos de usuario</p>
+      </div>
+      <div class="timeline-item">
+        <h5 class="fw-bold">3. Desarrollo</h5>
+        <p class="text-muted">10-14 días · Implementación de todas las funcionalidades</p>
+      </div>
+      <div class="timeline-item">
+        <h5 class="fw-bold">4. Pruebas de Calidad</h5>
+        <p class="text-muted">3-5 días · Aseguramiento de calidad y ajustes</p>
+      </div>
+      <div class="timeline-item">
+        <h5 class="fw-bold">5. Despliegue y Capacitación</h5>
+        <p class="text-muted">2 días · Implementación final y entrenamiento</p>
+      </div>
+      <div class="timeline-item">
+        <h5 class="fw-bold">6. Soporte Post-Entrega</h5>
+        <p class="text-muted">7 días · Garantía y ajustes menores</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title"><i class="fas fa-money-bill-wave me-2"></i>Plan de Inversión</h2>
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th>Etapa</th>
+            <th class="text-center">Porcentaje</th>
+            <th class="text-center">Monto (S/.)</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Inicio</strong><br><small>Firma de contrato</small></td>
+            <td class="text-center">30%</td>
+            <td class="text-center">270</td>
+            <td>Garantiza el inicio del proyecto y levantamiento de requerimientos</td>
+          </tr>
+          <tr>
+            <td><strong>Avance</strong><br><small>Prototipo aprobado</small></td>
+            <td class="text-center">40%</td>
+            <td class="text-center">360</td>
+            <td>Pago tras presentación y aprobación del prototipo funcional</td>
+          </tr>
+          <tr>
+            <td><strong>Entrega Final</strong><br><small>Sitio publicado</small></td>
+            <td class="text-center">30%</td>
+            <td class="text-center">270</td>
+            <td>Al completar el proyecto, subirlo al hosting y capacitar al usuario</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="alert alert-info mt-3">
+      <i class="fas fa-info-circle me-2"></i> <strong>Nota:</strong> Los pagos pueden realizarse vía transferencia bancaria o el método que prefiera, con comprobantes para transparencia.
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title"><i class="fas fa-shield-alt me-2"></i>Garantía y Soporte</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center">
+            <i class="fas fa-calendar-check text-primary mb-3" style="font-size: 2rem;"></i>
+            <h5 class="card-title">Garantía de 7 días</h5>
+            <p class="card-text">Corrección de errores o ajustes menores sin costo adicional.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center">
+            <i class="fas fa-graduation-cap text-primary mb-3" style="font-size: 2rem;"></i>
+            <h5 class="card-title">Capacitación Incluida</h5>
+            <p class="card-text">Entrenamiento completo para manejo del sistema.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center">
+            <i class="fas fa-headset text-primary mb-3" style="font-size: 2rem;"></i>
+            <h5 class="card-title">Soporte Extendido</h5>
+            <p class="card-text">Posibilidad de contratar mantenimiento mensual para actualizaciones, nuevas funciones o soporte extendido.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title"><i class="fas fa-star me-2"></i>Beneficios Clave</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <ul class="fa-ul">
+          <li class="mb-3"><span class="fa-li"><i class="fas fa-check text-success"></i></span> <strong>Mayor visibilidad:</strong> Presencia profesional 24/7 para su negocio</li>
+          <li class="mb-3"><span class="fa-li"><i class="fas fa-check text-success"></i></span> <strong>Atención inmediata:</strong> Comunicación directa con clientes vía WhatsApp</li>
+          <li class="mb-3"><span class="fa-li"><i class="fas fa-check text-success"></i></span> <strong>Autonomía:</strong> Gestione su catálogo sin depender de terceros</li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <ul class="fa-ul">
+          <li class="mb-3"><span class="fa-li"><i class="fas fa-check text-success"></i></span> <strong>Multiplataforma:</strong> Accesible desde cualquier dispositivo</li>
+          <li class="mb-3"><span class="fa-li"><i class="fas fa-check text-success"></i></span> <strong>Transparencia:</strong> Proceso claro con comunicación constante</li>
+          <li class="mb-3"><span class="fa-li"><i class="fas fa-check text-success"></i></span> <strong>Rentabilidad:</strong> Solución costo-efectiva que aumenta sus ventas</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h3 class="fw-bold">¿Listo para transformar su negocio?</h3>
+    <p class="mb-4">Este sistema le permitirá vender más, atender mejor a sus clientes y gestionar su inventario de manera eficiente.</p>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+        <a href="https://wa.me/51946349079?text=Hola,%20acepto%20la%20propuesta%20de%20la%20web%20conversacional" target="_blank" class="btn btn-light btn-lg px-4 me-md-2 fw-bold">
+            Aceptar Propuesta
+          </a>
+          <a href="https://wa.me/51946349079?text=Hola,%20tengo%20algunas%20dudas%20sobre%20la%20propuesta" target="_blank" class="btn btn-outline-light btn-lg px-4">
+            Consultar Dudas
+          </a>
+          
+    </div>
+  </section>
+
+  <section class="mt-5">
+    <h2 class="section-title"><i class="fas fa-handshake me-2"></i>Compromisos</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card mb-4 border-0 shadow-sm">
+          <div class="card-header bg-primary text-white">
+            <h5 class="mb-0"><i class="fas fa-user-tie me-2"></i> Cliente</h5>
+          </div>
+          <div class="card-body">
+            <ul class="fa-ul">
+              <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span> Proveer material necesario (imágenes, textos)</li>
+              <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span> Validar avances en tiempos acordados</li>
+              <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span> Realizar pagos según cronograma</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card mb-4 border-0 shadow-sm">
+          <div class="card-header bg-primary text-white">
+            <h5 class="mb-0"><i class="fas fa-laptop-code me-2"></i> Desarrollador</h5>
+          </div>
+          <div class="card-body">
+            <ul class="fa-ul">
+              <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span> Cumplir con el cronograma establecido</li>
+              <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span> Mantener comunicación constante</li>
+              <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span> Entregar solución funcional y documentada</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title"><i class="fas fa-rocket me-2"></i>Próximos Pasos</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center">
+            <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex p-3 mb-3">
+              <i class="fas fa-check-circle text-primary" style="font-size: 2rem;"></i>
+            </div>
+            <h5 class="card-title">1. Confirmación</h5>
+            <p class="card-text">Aceptación de la propuesta y firma de acuerdo</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center">
+            <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex p-3 mb-3">
+              <i class="fas fa-money-bill-wave text-primary" style="font-size: 2rem;"></i>
+            </div>
+            <h5 class="card-title">2. Primer Pago</h5>
+            <p class="card-text">Abono inicial para comenzar el proyecto</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center">
+            <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex p-3 mb-3">
+              <i class="fas fa-calendar-alt text-primary" style="font-size: 2rem;"></i>
+            </div>
+            <h5 class="card-title">3. Reunión Inicial</h5>
+            <p class="card-text">Coordinación para definir material y expectativas</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="text-center my-5 py-4">
+    <h3 class="fw-bold mb-4">¿Por qué trabajar conmigo?</h3>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">        
+            <p class="mb-0">Como profesional en desarrollo, me comprometo a entregar resultados de calidad, comunicarme con claridad y ofrecer soporte personalizado antes, durante y después del desarrollo. Mi objetivo es que esta solución impulse el crecimiento de su negocio.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
